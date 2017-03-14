@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		assignProjectConfig();
-		assignColumnConfig();
+	//	assignColumnConfig();
 	}
 
 	private static void assignProjectConfig() {
