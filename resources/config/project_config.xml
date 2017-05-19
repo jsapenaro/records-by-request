@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-<!-- MySQL credentials -->
-<entry key="MYSQL_USER">test user</entry>
-<entry key="MYSQL_PASS">test pass</entry>
+
+	<!-- MySQL information -->
+	<entry key="HOST">136.63.192.54</entry>
+	<entry key="PORT">3306</entry>
+
+	<!-- MySQL credentials -->
+	<entry key="MYSQL_USER">pmrbr</entry>
+	<entry key="MYSQL_PASS">!tyler1</entry>
+
+	<!-- Database name -->
+	<entry key="DB_NAME">records_by_request</entry>
+
+	<!-- Table names -->
+	<!-- do not modify keys, only value -->
+	<entry key="REQUESTS">requests</entry>
+	<entry key="MANIFEST">manifest</entry>
+
+	<!-- Client names -->
+	<!-- note: Separate each client using a ':' -->
+	<entry key="CLIENT_NAMES">Project 1:Project 2: Project 3: Project 4: Project 5: Project 6: Project 7: Project 8: Project 9: Project 10: Project 11: Project 12</entry>
+
+	<!-- Visible columns for main interface -->
+	<!-- Specify the key for which columns you want displayed on the main interface -->
+	<!-- Note: these keys must be defined in the 'request_columns_config.xml' file -->
+	<!-- Separate each column using a ':' -->
+	<entry key="VISIBLE_COLUMNS">status:date_required:time_required:request_timestamp:request_tracking_id:requester_first_name:requester_last_name:patient_first_name:patient_last_name</entry>
+
+	<!-- SMTP notification configuration -->
+	<entry key="EMAIL_USER">jsapenaro16@northlandcaps.org</entry>
+	<entry key="EMAIL_PASS">!Lps168172</entry>
+	<entry key="SMTP_HOST">smtp.office365.com</entry>
+	<entry key="SMTP_PORT">587</entry>
 </properties>

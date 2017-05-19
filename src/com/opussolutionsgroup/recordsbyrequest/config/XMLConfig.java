@@ -1,10 +1,8 @@
 package com.opussolutionsgroup.recordsbyrequest.config;
 
 import java.io.FileInputStream;
-
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.Properties;
-import java.util.Vector;
 
 /**
  * 
@@ -14,11 +12,11 @@ import java.util.Vector;
 public class XMLConfig {
 
 	private final String PATH_TO_FILE;
-	
+
 	private Properties properties;
 
-	private Vector<String> keysVector;
-	private Vector<String> valuesVector;
+	private ArrayList<String> keys = new ArrayList<String>();
+	private ArrayList<String> values = new ArrayList<String>();
 
 	public XMLConfig(final String PATH_TO_FILE) {
 		this.PATH_TO_FILE = PATH_TO_FILE;
@@ -36,51 +34,50 @@ public class XMLConfig {
 			System.err.printf("Error reading from configuration file: %s.", e);
 			System.exit(1);
 		}
-		buildVectors();
+		buildArrayLists();
 	}
 
 	/**
-	 * Helper method that puts the properties into a Vector (required for the JTable)
+	 * Helper method that puts the properties into an ArrayList
 	 */
-	private void buildVectors() {
-		keysVector = new Vector<String>(properties.size());
-		valuesVector = new Vector<String>(properties.size());
-
+	private void buildArrayLists() {
 		for (int i = 0; i < properties.size(); i++) {
-			keysVector.add(properties.keySet().toArray()[i].toString());
-			valuesVector.add(properties.values().toArray()[i].toString());
+			keys.add(properties.keySet().toArray()[i].toString());
+			values.add(properties.values().toArray()[i].toString());
 		}
-
-		// reverse the order of the Vector so that it is in chronological order
-		Collections.reverse(keysVector);
-		Collections.reverse(valuesVector);
 	}
-	
+
 	/**
 	 * Method used to retrieve a value associated with a key
 	 * 
-	 * @param key The key that is associated to the value
+	 * @param key
+	 *            The key that is associated to the value
 	 * @return The value associated with the key
 	 */
 	public String getValue(String key) {
-		return properties.getProperty(key);
-	}
-	
-	/**
-	 * Method used to retrieve a vector that contains configuration keys
-	 * 
-	 * @return Vector of configuration keys
-	 */
-	public Vector<String> getKeysVector() {
-		return keysVector;
+		if (properties.containsKey(key)) {
+			return properties.getProperty(key);
+		} else {
+			System.err.printf("Error retrieving property: %s%n", key);
+			return null;
+		}
 	}
 
 	/**
-	 * Method used to retrieve a vector that contains configuration values
+	 * Method used to retrieve an ArrayList that contains configuration keys
 	 * 
-	 * @return Vector of configuration values
+	 * @return ArrayList of configuration keys
 	 */
-	public Vector<String> getValuesVector() {
-		return valuesVector;
+	public ArrayList<String> getKeys() {
+		return keys;
+	}
+
+	/**
+	 * Method used to retrieve an ArrayList that contains configuration values
+	 * 
+	 * @return ArrayList of configuration values
+	 */
+	public ArrayList<String> getValues() {
+		return values;
 	}
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<!-- All column definitions of data you want to retrieve from the database -->
+	<!-- (key = column name), (value = text display on interface) -->
+	<!-- database column id's can be the whatever you want but 'request_tracking_id' must be the same -->
+	
+	<entry key="request_tracking_id">Request ID</entry>
+	<!-- _______________________________________________________________________________-->
+	<entry key="date_required">Date Required</entry>
+	<entry key="time_required">Time Required</entry>
+	<entry key="request_timestamp">Date Submitted</entry>
+	<entry key="project_number">Project Number</entry>
+	<entry key="status">Status</entry>
+	<entry key="requester_first_name">Requester First Name</entry>
+	<entry key="requester_last_name">Requester Last Name</entry>
+	<entry key="requester_email">Requester Email</entry>
+	<entry key="requester_phone">Requester Phone</entry>
+	<entry key="patient_first_name">Patient First Name</entry>
+	<entry key="patient_last_name">Patient Last Name</entry>
+	<entry key="patient_dob">Patient DOB</entry>
+	<entry key="patient_id">Patient ID</entry>
+	<entry key="patient_location">Patient Location</entry>
+	<entry key="extra_information">Extra Information</entry>
+
+</properties>
